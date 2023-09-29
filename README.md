@@ -9,4 +9,4 @@ Mentors: Ashwini
 
 - 🔭 We are helping Wellfare this weekend!
 - 🌱 We will create a technical solution that will help Wellfare with their first in person store!
-- ✨ We are proefficient in many languages/frameworks such as: 
+- ✨ We are proefficient in many languages/frameworks such as: Java, Python, JavaScript, SQL
