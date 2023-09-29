@@ -2,3 +2,31 @@
     max-width: 10%;
     max-height: 15%;
 }
+
+.some-page-wrapper {
+  margin: 15px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.discount {
+  outline: 2px solid rgb(44, 170, 39);
+  height: 140px;
+}
+
+.events {
+  outline: 2px solid rgb(226, 226, 226);
+  height: 140px;
+}
