@@ -10,3 +10,6 @@ Mentors: Ashwini
 - 🔭 We are helping Wellfare this weekend!
 - 🌱 We will create a technical solution that will help Wellfare with their first in person store!
 - ✨ We are proefficient in many languages/frameworks such as: 
+
+
+- This is our brainstorm doc https://docs.google.com/document/d/1DQfUbR0FzBjTAtOd0EkZqZjo2DNMIgb5_IAn_kasHHg/edit 
