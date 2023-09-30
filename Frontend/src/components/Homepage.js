@@ -10,9 +10,9 @@ const Homepage = () => {
             </div>
             <div className="sign-up">
                 <input placeholder='Phone Number'></input>
-                <button>Login with SMS</button>
+                <a href='/profile'><button>Login with SMS</button></a>
                 <br></br>
-                <button>I'm a new user!</button>
+                <a href='/signup'><button>I'm a new user!</button></a>
             </div>
         </div>
     );
