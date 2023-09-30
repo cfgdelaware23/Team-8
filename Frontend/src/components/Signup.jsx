@@ -1,4 +1,13 @@
 import { useState } from 'react';
+import * as React from 'react';
+import FormControl from '@mui/material/FormControl';
+import InputLabel from '@mui/material/InputLabel';
+import FilledInput from '@mui/material/FilledInput';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import FormLabel from '@mui/material/FormLabel';
+import Button from '@mui/material/Button';
 
 export default function Signup() {
   const [inputs, setInputs] = useState({});
@@ -8,6 +17,37 @@ export default function Signup() {
     const value = event.target.value;
     setInputs(values => ({...values, [name]: value}))
   }
+
+  const handleAssistance = (event) => {
+    if (event.target.value === "SNAP"){
+      inputs.assistance = "SNAP"
+    }
+    else if (event.target.value === "WIC") {
+      inputs.assistance = "WIC"
+    }
+    else if (event.target.value === "both") {
+      inputs.assistance = "Both"
+    }
+    else {
+      inputs.assistance = "None"
+    }
+  }
+
+  const handleHousing = (event) => {
+    if (event.target.value === "yes") {
+      inputs.housing = "Yes"
+    } else {
+      inputs.housing = "No"
+    }
+  };
+
+  const handleInsecurity = (event) => {
+    if (event.target.value === "yes") {
+      inputs.insecurity = "Yes"
+    } else {
+      inputs.insecurity = "No"
+    }
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,92 +60,74 @@ export default function Signup() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>Enter your full name: 
-      <input 
-        type="text" 
-        name="name" 
-        value={inputs.name || ""} 
-        onChange={handleChange}
-        required />
-      </label><br></br>
-      <label>Enter your cellphone number: 
-        <input 
-          type="tel" 
-          name="number" 
-          value={inputs.number || ""} 
+      <br></br>
+      <br></br>      
+      <FormControl varaint="filled">
+        <InputLabel htmlFor="component-filled"> Name</InputLabel>
+        <FilledInput
+          type="text"
+          id="component-outlined"
+          name="name"
+          defaultValue={inputs.name || ""}
           onChange={handleChange}
-          required />
-        </label>
+          required/>
+      </FormControl>
+      <br></br>
+      <br></br>
+      <FormControl>
+        <InputLabel htmlFor="component-filled">Cellphone Number</InputLabel>
+        <FilledInput
+          type="tel"
+          id="component-outlined"
+          name="number"
+          defaultValue={inputs.number || ""}
+          onChange={handleChange}
+          required/>
+      </FormControl>
         <br></br>
-        <label>
-           Are you enrolled in an assistance program? {/* radio buttons */}
-           <input
-            type="radio"
-            name="assistance"
-            value="SNAP"
-            checked={inputs.assistance === "SNAP"}
-            onChange={handleChange}
-            required /> SNAP
-            <input
-            type="radio"
-            name="assistance"
-            value="WIC"
-            checked={inputs.assistance === "WIC"}
-            onChange={handleChange}
-            required /> WIC
-            <input
-            type="radio"
-            name="assistance"
-            value="Both"
-            checked={inputs.assistance === "Both"} 
-            onChange={handleChange}
-            required /> Both
-            <input
-            type="radio"
-            name="assistance"
-            value="None"
-            checked={inputs.assistance === "None"}
-            onChange={handleChange}
-            required /> None
-        </label>
         <br></br>
-        <label>
-           Do you live in public housing? {/* radio buttons */}
-           <input
-            type="radio"
-            name="housing"
-            value="Yes"
-            checked={inputs.housing === "Yes"}
-            onChange={handleChange}
-            required /> Yes
-            <input
-            type="radio"
-            name="housing"
-            value="No"
-            checked={inputs.housing === "No"}
-            onChange={handleChange}
-            required /> No
-            </label>
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Are you enrolled in an assistance program?</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            name="assistance-buttons-group"
+            onChange={handleAssistance}
+          >
+            <FormControlLabel value="SNAP" control={<Radio />} label="SNAP" required/>
+            <FormControlLabel value="WIC" control={<Radio />} label="WIC" required/>
+            <FormControlLabel value="both" control={<Radio />} label="Both" required/>
+            <FormControlLabel value="none" control={<Radio />} label="None" required/>
+             </RadioGroup> 
+        </FormControl>
         <br></br>
-        <label>
-        Have you faced food insecurity? {/* radio buttons */}
-           <input
-            type="radio"
-            name="insecurity"
-            value="Yes"
-            checked={inputs.insecurity === "Yes"}
-            onChange={handleChange}
-            /> Yes
-            <input
-            type="radio"
-            name="insecurity"
-            value="No"
-            checked={inputs.insecurity === "No"}
-            onChange={handleChange}
-            /> No
-            </label>
+        <br></br>
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Do you live in public housing?</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            name="housing-buttons-group"
+            onChange={handleHousing}
+          >
+            <FormControlLabel value="yes" control={<Radio />} label="Yes" required/>
+            <FormControlLabel value="no" control={<Radio />} label="No" required/>
+             </RadioGroup> 
+        </FormControl>
+        <br></br>
+        <br></br>
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Have you faced food insecurity?</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            name="insecurity-buttons-group"
+            onChange={handleInsecurity}
+          >
+            <FormControlLabel value="yes" control={<Radio />} label="Yes" required/>
+            <FormControlLabel value="no" control={<Radio />} label="No" required/>
+             </RadioGroup> 
+        </FormControl>
             <br></br>
-        <input type="submit" />
+            
+        <Button type="submit" variant="contained"> Submit </Button>
     </form>
   )
 }

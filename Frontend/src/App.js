@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Signup from './components/Signup.jsx';
 import React from 'react';
