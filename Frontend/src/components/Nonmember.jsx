@@ -2,7 +2,7 @@ import * as React from 'react';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Button from '@mui/material/Button'
 
-export default function Nonember() {
+export default function Nonmember() {
   
     const theme = createTheme({
         palette: {
@@ -15,7 +15,7 @@ export default function Nonember() {
     return (
       <form>
             <br></br>
-            <img src="https://codeforgood.net/wp-content/uploads/2023/09/Wellfare-Logo-1536x304.png" height="50px"/>
+            <img src="https://codeforgood.net/wp-content/uploads/2023/09/Wellfare-Logo-1536x304.png" alt="logo" height="50px"/>
             <h2>Greetings Bill!</h2>
             <h3>Offer the customer a membership.</h3>
             <ThemeProvider theme={theme}>

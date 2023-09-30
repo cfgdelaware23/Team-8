@@ -8,12 +8,13 @@ import Scan from './components/Scan';
 import GuestCheckout from './components/GuestCheckout';
 import Checkout from './components/Checkout';
 import Code from './components/Code';
+import Feedback from './components/Feedback';
 import React from 'react';
 
 function App() {
   return (
     <div className="App">
-      <Checkout/>
+      <Feedback/>
     </div>
   );
 }
