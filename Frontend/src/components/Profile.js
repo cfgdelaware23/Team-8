@@ -6,22 +6,23 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import CardMedia from '@mui/material/CardMedia';
-
-
 import './Profile.css';
+import axios from 'axios';
+
 
 const Profile = () => {
-
     const [name, setName] = useState('tester');
     const [code, setCode] = useState('X32Z');
     const [savings, setSavings] = useState('45%');
     const [id, setId] = useState('001');
-    // Connect database to ab
+
+
     return (
         <div class="profile">
             <img className="logo" src="https://static.wixstatic.com/media/be7cda_0740848baea54c8e8af2e1a6ad34b9ad~mv2.png/v1/fill/w_101,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20-%20Primary.png" alt="logo"/>
             <h2>Welcome, {name}!</h2>
             <p>ID: {id}</p>
+
     
             <Container sx={{ py: 8 }} maxWidth="md">
             <Grid container spacing={4}>
@@ -95,52 +96,6 @@ const Profile = () => {
                 </Grid>
             </Grid>
             </Container>
-{/*     
-            <div className="wrapper">
-                <div className="row">
-                    <div className="column">
-                        <div className="discount"> 
-                            <p>Use code</p>
-                            <h1 className="save">{code}</h1>
-                            <p>to save <strong>{savings}</strong> on all products!</p>
-                        </div>
-                    </div>
-                    
-                    <div className="column">
-                        <div className="events">
-                            <p><strong>Get involved! Community Events Near You:</strong></p>
-                            <ul>
-                                <li>10/15 3-6pm Pumpkin Picking </li>
-                                <li>10/25 8-10pm Movie Night</li>
-                                <li>10/31 11am-1pm Halloween Parade</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="column">
-                        <div className="discount">
-                            <p><strong>Volunteer Opportunities</strong></p>
-                            <p>Interested in helping others? Volunteer with us!</p>
-                            <ul>
-                                <li>Help pack grocery boxes in Brooklyn!</li>
-                                <li>Help distribute boxes in Bushwick and East Harlem!</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="column">
-                        <div className="events">
-                            <p><strong>Volunteer Opportunities</strong></p>
-                            <p>Interested in helping others? Volunteer with us!</p>
-                            <ul>
-                                <li>Help pack grocery boxes in Brooklyn!</li>
-                                <li>Help distribute boxes in Bushwick and East Harlem!</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-
             <div className="footer">
                 <h4>Millions of Americans face barriers to accessing nutritious food everyday. We're on a mission to change that.</h4>
             </div>
