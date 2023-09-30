@@ -2,6 +2,12 @@
     background-color: #ffffff;
 }
 
+@font-face {
+    font-family: 'Agrandir Regular';
+    src: ('~/Downloads/Agrandir - Free For Personal Use/Agrandir-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
 
 .log-in-button {
     border: none;
@@ -73,10 +79,12 @@
 .grey-text{
     color: #6F96A3;
     font-size: 30 px;
+    font: Agrandir Bold;
 }
 
 h1{
     font-size: 45 px;
+    font-family: 'Agrandir Bold';
 }
 .center-container {
     display: flex;
