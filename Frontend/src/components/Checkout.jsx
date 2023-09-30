@@ -13,6 +13,7 @@ export default function Checkout() {
             <br></br>
             <img src="https://codeforgood.net/wp-content/uploads/2023/09/Wellfare-Logo-1536x304.png" height="50px"/>
             <h2>Greetings Bill!</h2>
+            <br></br>
                 <Grid sx={{ flexGrow: 1 }} container spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justifyContent="center" spacing={2}>

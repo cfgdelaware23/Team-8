@@ -1,4 +1,10 @@
 import * as React from 'react';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import Typography from '@mui/material/Typography';
+import { CardActionArea } from '@mui/material';
+import Grid from '@mui/material/Grid';
 
 export default function GuestCheckout() {
 
@@ -7,6 +13,7 @@ export default function GuestCheckout() {
             <br></br>
             <img src="https://codeforgood.net/wp-content/uploads/2023/09/Wellfare-Logo-1536x304.png" height="50px"/>
             <h2>Greetings Bill!</h2>
+            <br></br>
             <Grid sx={{ flexGrow: 1 }} container spacing={2}>
                     <Grid item xs={12}>
                         <Grid container justifyContent="center" spacing={2}>
