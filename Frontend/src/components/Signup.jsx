@@ -1,82 +1,83 @@
-import React, { useState } from "react";
-//import React from "react";
+import { useState } from 'react';
 
-  const Signup = () => {
-    const [name, setName] = useState(""); // Enter your full name
-    const [number, setNumber] = useState(""); // Enter your mobile phone number
-    const [assistance, setAssistance] = useState(""); // Are you enrolled in an assistance program?  SNAP, WIC, or None
-    const [housing, setHousing] = useState(""); // Do you live in public housing? - Yes, No
+export default function Signup() {
+  const [inputs, setInputs] = useState({});
 
-    const handleSubmit = (event) => {
-      console.log(`
-        Name: ${name}
-        Number: ${number}
-        Assistance: ${assistance}
-        Housing: ${housing}
-      `);
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs(values => ({...values, [name]: value}))
+  }
 
-      event.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(inputs);
+  }
 
-    }
-    return (
-      <form onSubmit={handleSubmit}>
-        <h1>Become a member for discounted prices</h1>
-
-        <label>
-          Full Name {/* text box */}
-          <input
-            name="name"
-            type="name"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            required />
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>Enter your full name: 
+      <input 
+        type="text" 
+        name="name" 
+        value={inputs.name || ""} 
+        onChange={handleChange}
+      />
+      </label><br></br>
+      <label>Enter cellphone number: 
+        <input 
+          type="number" 
+          name="number" 
+          value={inputs.number || ""} 
+          onChange={handleChange}
+        />
         </label>
-
+        <br></br>
         <label>
-          Cellphone Number {/* text box */}
-          <input
-            name="number"
-            type="number"
-            value={number}
-            onChange={e => setNumber(e.target.value)}
-            required />
-        </label>
-
-        <label>
-          Are you enrolled in an assistance program? {/* radio buttons */}
-          <input
+           Are you enrolled in an assistance program? {/* radio buttons */}
+           <input
             name="assistance"
-            type="assistance"
-            value={assistance}
-            onChange={e => setAssistance(e.target.value)}
-            required />
-            <input type="radio" id="snap" name="assistance_program" value="SNAP"/>
-            <label for="snap">SNAP</label><br></br>
-            <input type="radio" id="wic" name="assistance_program" value="WIC"/>
-            <label for="wic">WIC</label><br></br>
-            <input type="radio" id="both" name="assistance_program" value="Both"/>
-            <label for="both">Both</label><br></br>
-            <input type="radio" id="none" name="assistance_program" value="None"/>
-            <label for="none">None</label><br></br>
+            type="radio"
+            value={inputs.assistance} 
+            onChange={handleChange}
+            required /> SNAP
+            <input
+            name="assistance"
+            type="radio"
+            value={inputs.assistance} 
+            onChange={handleChange}
+            required /> WIC
+            <input
+            name="assistance"
+            type="radio"
+            value={inputs.assistance} 
+            onChange={handleChange}
+            required /> Both
+            <input
+            name="assistance"
+            type="radio"
+            value={inputs.assistance} 
+            onChange={handleChange}
+            required /> None
         </label>
-
+        <br></br>
         <label>
-          Do you live in public housing? {/* radio buttons */}
-          <input
+           Do you live in public housing? {/* radio buttons */}
+           <input
             name="housing"
-            type="housing"
-            value={housing}
-            onChange={e => setHousing(e.target.value)}
-            required />
-            <input type="radio" id="yes" name="housing_status" value="Yes"/>
-            <label for="yes">Yes</label><br></br>
-            <input type="radio" id="no" name="housing_status" value="No"/>
-            <label for="no">No</label><br></br>
-        </label>
-
-        <button>Submit</button>
-      </form>
-    );
-  };
-
-export default Signup();
+            type="radio"
+            value={inputs.housing} 
+            onChange={handleChange}
+            required /> Yes
+            <input
+            name="housing"
+            type="radio"
+            value={inputs.housing} 
+            onChange={handleChange}
+            required /> No
+            </label>
+            <br></br>
+        <input type="submit" />
+    </form>
+  )
+}
