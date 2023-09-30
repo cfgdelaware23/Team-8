@@ -24,7 +24,7 @@ export default function Nonmember() {
             <br></br>
             <br></br>
             </ThemeProvider><ThemeProvider theme={theme}>
-              <Button variant="contained" color="primary"> Checkout as guest </Button>
+              <Button href="/guest" variant="contained" color="primary"> Checkout as guest </Button>
               {/* onclick they should be sent to Guest.jsx */}
             </ThemeProvider>
         </form>

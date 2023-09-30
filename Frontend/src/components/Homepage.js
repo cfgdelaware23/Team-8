@@ -10,7 +10,7 @@ const Homepage = () => {
             <div class="circle-container">
                 <a href="/profile"><button class= "log-in-button">Login</button></a>
                 <a href="/signup"><button class="new-user-button">Sign Up</button></a>
-                <a href="/employee"><button class="new-user-button">Employee Login</button></a>
+                <a href="/employee"><button class="new-user-button">Employee</button></a>
 
             </div>
             <h1><span class="red-text">Wel</span><span class ="grey-text">come</span></h1>

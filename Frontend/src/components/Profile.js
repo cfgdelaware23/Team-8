@@ -62,7 +62,7 @@ const Profile = () => {
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                         <Typography gutterBottom variant="h5" component="h2">
-                        <strong>$832.34</strong>
+                        <strong>$120.34</strong>
                         </Typography>
                         <Typography>
                         That's the amount you've saved so far shopping with Wellfare!
@@ -71,6 +71,84 @@ const Profile = () => {
                     </Card>
                 </Grid>
 
+                <Grid item xs={12} sm={6} md={4}>
+                    <Card
+                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                    >
+                    <CardMedia
+                        component="div"
+                        sx={{
+                        // 16:9
+                        pt: '56.25%',
+                        }}
+                        image="https://www.freepnglogos.com/uploads/shopping-cart-png/file-shopping-cart-with-food-clip-art-svg-wikimedia-25.png"
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                        <strong>Past Purchases</strong>
+                        </Typography>
+                        <Typography>
+                            Spinach....$0.99
+                            Beans.......$0.50
+                            Tomatoes...$0.25
+                            Milk.......$0.15
+                        </Typography>
+                    </CardContent>
+                    </Card>
+                </Grid>
+
+                
+                <Grid item xs={12} sm={6} md={4}>
+                    <Card
+                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                    >
+                    <CardMedia
+                        component="div"
+                        sx={{
+                        // 16:9
+                        pt: '56.25%',
+                        }}
+                        image="https://cdn-icons-png.flaticon.com/512/5016/5016804.png"
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                        <strong>Healthy Rewards!</strong>
+                        </Typography>
+                        <Typography>
+                            Buy <strong>$8 more</strong> of spinach to get $10 free!
+                            <br></br>
+                            Buy <strong>$2 more</strong> of kale to get $10 free!
+                        </Typography>
+                    </CardContent>
+                    </Card>
+                </Grid>
+
+                <Grid item xs={12} sm={6} md={4}>
+                    <Card
+                    sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
+                    >
+                    <CardMedia
+                        component="div"
+                        sx={{
+                        // 16:9
+                        pt: '56.25%',
+                        }}
+                        image="https://cdn-icons-png.flaticon.com/512/3456/3456459.png"
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                        <Typography gutterBottom variant="h5" component="h2">
+                        <strong>Membership Benefits</strong>
+                        </Typography>
+                        <Typography>
+                            Free Planet Fitness Classes with code <strong>{code}</strong>
+                            <br></br>
+                            Free Yoga Classes at ZenTime with code <strong>{code}</strong>
+                        </Typography>
+                    </CardContent>
+                    </Card>
+                </Grid>
+
+                
                 <Grid item xs={12} sm={6} md={4}>
                     <Card
                     sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
