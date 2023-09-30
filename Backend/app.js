@@ -10,7 +10,7 @@ const profile = {
    householdSize: 4,
    age: 35,
    employedStatus: false,
-   accessibilityPrograms: true, // temporary until we figure out format
+   accessibilityPrograms: true, // temporary until we figure out format 
    streetAddress: '250 Church Street',
    city: 'New York',
    state: 'New York'        
