@@ -11,7 +11,7 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert(inputs);
+    console.log(`The name you entered was: ${inputs.name}`)
   }
 
   return (
@@ -22,40 +22,40 @@ export default function Signup() {
         name="name" 
         value={inputs.name || ""} 
         onChange={handleChange}
-      />
+        required />
       </label><br></br>
       <label>Enter cellphone number: 
         <input 
-          type="number" 
+          type="tel" 
           name="number" 
           value={inputs.number || ""} 
           onChange={handleChange}
-        />
+          required />
         </label>
         <br></br>
         <label>
            Are you enrolled in an assistance program? {/* radio buttons */}
            <input
-            name="assistance"
             type="radio"
+            name="assistance"
             value={inputs.assistance} 
             onChange={handleChange}
             required /> SNAP
             <input
-            name="assistance"
             type="radio"
+            name="assistance"
             value={inputs.assistance} 
             onChange={handleChange}
             required /> WIC
             <input
-            name="assistance"
             type="radio"
+            name="assistance"
             value={inputs.assistance} 
             onChange={handleChange}
             required /> Both
             <input
-            name="assistance"
             type="radio"
+            name="assistance"
             value={inputs.assistance} 
             onChange={handleChange}
             required /> None
@@ -64,14 +64,14 @@ export default function Signup() {
         <label>
            Do you live in public housing? {/* radio buttons */}
            <input
-            name="housing"
             type="radio"
+            name="housing"
             value={inputs.housing} 
             onChange={handleChange}
             required /> Yes
             <input
-            name="housing"
             type="radio"
+            name="housing"
             value={inputs.housing} 
             onChange={handleChange}
             required /> No
