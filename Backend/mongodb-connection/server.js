@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
 
-const uri = "mongodb+srv://dp788:<dp788>@codeforgood.wnptfp0.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://dpcode:dpcode@codeforgood.wnptfp0.mongodb.net/?retryWrites=true&w=majority";
 async function connect() {
   try {
     await mongoose.connect(uri);

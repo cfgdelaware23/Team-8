@@ -18,7 +18,7 @@ const Profile = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:4001/profile') // Replace with your API endpoint
+        axios.get('http://localhost:8000/profile') // Replace with your API endpoint
           .then(response => {
             setData(response.data);
           })

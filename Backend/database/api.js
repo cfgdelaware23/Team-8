@@ -6,7 +6,7 @@ const router = express.Router();
 
 const PORT = process.env.PORT || 4001;
 // Use static server to serve the Express Yourself Website
-app.use(express.static('public'));
+app.use(express.json());
 
 
 // Import and mount the signUpRouter
@@ -23,10 +23,10 @@ app.listen(PORT, () => {
   console.log(`Server is listening on ${PORT}`);
 });
 
-const CodeForGood = require('./Users/dpetrovikj/Desktop/github/Team-8/Backend/mongodb-connection/codeforgood1.js');
+const CodeForGood = require('/Users/petrovikj/Desktop/github/Team-8/Backend/mongodb-connection/codeforgood1.js');
 
 // Handle form submission
-router.post('/submit', async (req, res) => {
+app.post('/submit', async (req, res) => {
   try {
     const formData = req.body; // Assuming you're using body-parser middleware
     const newEntry = new CodeForGood(formData);
@@ -37,5 +37,13 @@ router.post('/submit', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.get('/hi', (req, res) => {
+  res.json({ message: 'hi, World!' });
+});
+
+app.get('/api/hello', (req, res) => {
+  res.json({ message: 'Hello, World!' });
+});
+
 
 module.exports = router;
