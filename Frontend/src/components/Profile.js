@@ -15,8 +15,18 @@ const Profile = () => {
     const [code, setCode] = useState('X32Z');
     const [savings, setSavings] = useState('45%');
     const [id, setId] = useState('001');
+    const [data, setData] = useState([]);
 
-
+    useEffect(() => {
+        axios.get('http://localhost:4001/api/data') // Replace with your API endpoint
+          .then(response => {
+            setData(response.data);
+          })
+          .catch(error => {
+            console.error('Error fetching data:', error);
+          });
+    }, []);
+    
     return (
         <div class="profile">
             <img className="logo" src="https://static.wixstatic.com/media/be7cda_0740848baea54c8e8af2e1a6ad34b9ad~mv2.png/v1/fill/w_101,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20-%20Primary.png" alt="logo"/>
