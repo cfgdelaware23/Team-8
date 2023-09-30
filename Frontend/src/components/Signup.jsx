@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import * as React from 'react';
 import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import FilledInput from '@mui/material/FilledInput';
 import Radio from '@mui/material/Radio';
 import RadioGroup from '@mui/material/RadioGroup';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import TextField from '@mui/material/TextField';
 
 export default function Signup() {
   const [inputs, setInputs] = useState({});
@@ -18,18 +18,15 @@ export default function Signup() {
     setInputs(values => ({...values, [name]: value}))
   }
 
-  const handleAssistance = (event) => {
-    if (event.target.value === "SNAP"){
-      inputs.assistance = "SNAP"
+  const handleLanguage = (event) => {
+    if (event.target.value === "english"){
+      inputs.language = "English"
     }
-    else if (event.target.value === "WIC") {
-      inputs.assistance = "WIC"
-    }
-    else if (event.target.value === "both") {
-      inputs.assistance = "Both"
+    else if (event.target.value === "spanish"){
+      inputs.language = "Español"
     }
     else {
-      inputs.assistance = "None"
+      inputs.language = "Français"
     }
   }
 
@@ -41,6 +38,14 @@ export default function Signup() {
     }
   };
 
+  const handleAssistance = (event) => {
+    if (event.target.value === "yes") {
+      inputs.assistance = "Yes"
+    } else {
+      inputs.assistance = "No"
+    }
+  }
+
   const handleInsecurity = (event) => {
     if (event.target.value === "yes") {
       inputs.insecurity = "Yes"
@@ -49,79 +54,82 @@ export default function Signup() {
     }
   };
 
+  const theme = createTheme({
+    palette: {
+      primary: {
+        main: "#D63C23",
+      },
+    },
+  });
+
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(`Enter your first name: ${inputs.first_name}`)
     console.log(`Enter your last name: ${inputs.last_name}`)
     console.log(`Enter your cellphone number: ${inputs.number}`)
-    console.log(`Are you enrolled in an assistance program? ${inputs.assistance}`)
+    console.log(`What is your primary language ${inputs.language}`)
     console.log(`Do you live in public housing? ${inputs.housing}`)
+    console.log(`Are you enrolled in an assistance program? ${inputs.assistance}`)
     console.log(`Have you faced food insecurity? ${inputs.insecurity}`)
   }
 
   return (
-    // first name last name
-    // phone number
     // primary language - english, español, french
-    // Is anyone in the household enrolled in SNAP EBT (formerly "food stamps")?
-    // do u live in a housing development?
-    // Does anyone in the household visit a free food pantry and/or receive free food from other programs at least once a month?
 
     <form onSubmit={handleSubmit}>
       <br></br>
       <img src="https://codeforgood.net/wp-content/uploads/2023/09/Wellfare-Logo-1536x304.png" height="50px"/>
       <h1>Member Profile</h1>
-      <FormControl varaint="filled">
-        <InputLabel htmlFor="component-filled"> First Name</InputLabel>
-        <FilledInput
+      <TextField
+          required
           type="text"
-          id="component-outlined"
-          name="name"
+          id="standard-required"
+          label="First Name"
+          name="first_name"
           defaultValue={inputs.first_name || ""}
           onChange={handleChange}
-          required/>
-      </FormControl>
-      &nbsp;&nbsp;
-      <FormControl varaint="filled">
-        <InputLabel htmlFor="component-filled"> Last Name</InputLabel>
-        <FilledInput
+          variant="standard"
+        />
+        &nbsp;&nbsp;
+        <TextField
+          required
           type="text"
-          id="component-outlined"
-          name="name"
+          id="standard-required"
+          label="Last Name"
+          name="last_name"
           defaultValue={inputs.last_name || ""}
           onChange={handleChange}
-          required/>
-      </FormControl>
+          variant="standard"
+        />
       <br></br>
       <br></br>
-      <FormControl>
-        <InputLabel htmlFor="component-filled">Phone Number</InputLabel>
-        <FilledInput
+      <TextField
+          required
           type="tel"
-          id="component-outlined"
+          id="standard-required"
+          label="Phone Number"
           name="number"
           defaultValue={inputs.number || ""}
           onChange={handleChange}
-          required/>
-      </FormControl>
-        <br></br>
-        <br></br>
-        <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Are you enrolled in an assistance program?</FormLabel>
+          variant="standard"
+        />
+      <br></br>
+      <br></br>
+      <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">What is your primary language?</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
-            name="assistance-buttons-group"
-            onChange={handleAssistance}
+            name="language-buttons-group"
+            onChange={handleLanguage}
           >
-            <FormControlLabel value="SNAP" control={<Radio />} label="SNAP" required/>
-            <FormControlLabel value="WIC" control={<Radio />} label="WIC" required/>
-            <FormControlLabel value="both" control={<Radio />} label="Both" required/>
-            <FormControlLabel value="none" control={<Radio />} label="None" required/>
+            <FormControlLabel value="english" control={<Radio />} label="English" required/>
+            <FormControlLabel value="spanish" control={<Radio />} label="Español" required/>
+            <FormControlLabel value="french" control={<Radio />} label="Français" required/>
              </RadioGroup> 
         </FormControl>
         <br></br>
         <br></br>
-        <FormControl>
+      <FormControl>
           <FormLabel id="demo-radio-buttons-group-label">Do you reside in a NYCHA public housing development?</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
@@ -135,7 +143,21 @@ export default function Signup() {
         <br></br>
         <br></br>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Have you faced food insecurity?</FormLabel>
+          <FormLabel id="demo-radio-buttons-group-label">Is anyone in the household enrolled in SNAP EBT (formerly "food stamps")?</FormLabel>
+          <RadioGroup
+            aria-labelledby="demo-radio-buttons-group-label"
+            name="assistance-buttons-group"
+            onChange={handleAssistance}
+          >
+            <FormControlLabel value="yes" control={<Radio />} label="Yes" required/>
+            <FormControlLabel value="no" control={<Radio />} label="No" required/>
+             </RadioGroup> 
+        </FormControl>
+        <br></br>
+        <br></br>
+        
+        <FormControl>
+          <FormLabel id="demo-radio-buttons-group-label">Does anyone in the household visit a free food pantry and/or receive free food from other programs at least once a month?</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             name="insecurity-buttons-group"
@@ -147,7 +169,12 @@ export default function Signup() {
         </FormControl>
             <br></br>
             
-        <Button type="submit" variant="contained"> Submit </Button>
+            <ThemeProvider theme={theme}>
+              <Button type="submit" variant="contained" color="primary"> Submit </Button>
+            </ThemeProvider>
+            <br></br>
+            <br></br>
+            <br></br>
     </form>
   )
 }
