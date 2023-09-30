@@ -15,9 +15,12 @@ CREATE TABLE Employee (
 CREATE TABLE Customer (
     CustomerID INT PRIMARY KEY,
     PersonID INT UNIQUE,
-    CreditLimit DECIMAL(10, 2),
+    HouseIncome DECIMAL,
+    HouseholdSize INT,
+    AccessProgr BOOLEAN,
+    City VARCHAR(70),
+    StateAbbrev VARCHAR(10),
+    EmploymentStatus VARCHAR(30),
     FOREIGN KEY (PersonID) REFERENCES Person(PersonID)
 );
 
-
-SELECT PersonID FROM Person;
