@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
@@ -25,7 +25,9 @@ const Profile = () => {
           .catch(error => {
             console.error('Error fetching data:', error);
           });
+
     }, []);
+    console.log(data);
     
     return (
         <div class="profile">
