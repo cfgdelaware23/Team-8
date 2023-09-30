@@ -1,0 +1,111 @@
+.home {
+    background-color: #ffffff;
+    align-items: center;
+    text-align: center;
+    align-content: center;
+}
+
+@font-face {
+    font-family: 'Agrandir Regular';
+    src: ('~/Downloads/Agrandir - Free For Personal Use/Agrandir-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.log-in-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 270px; 
+    height: 270px;
+    border-radius: 50%; 
+    background-color: #e9bc8b; 
+    color: white; 
+    text-align: center; 
+    line-height: 10px; 
+    font-size: 36px; 
+    cursor: pointer;
+    padding: 10px;
+}
+.language-button {
+    transform: rotate(-90deg);
+    writing-mode: vertical-rl;
+    align-items: center;
+    color: #3498db;
+    background-color: #1e4182;
+    line-height: 40px;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    width: 70px; 
+    text-align: center;
+    height: 300px;
+}
+
+.side-panel {
+    background-color: #333; /* Set the background color for the side panel */
+    width: 100px; /* Set the width of the side panel */
+    height: 100vh; /* Set the height to cover the full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.new-user-button {
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 270px; 
+    height: 270px;
+    border-radius: 50%; 
+    background-color: #e9bc8b; 
+    color: white; 
+    text-align: center; 
+    line-height: 10px; 
+    font-size: 36px; 
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sign-up{
+    color: white;
+    background-color: rgb(215, 203, 203);
+}
+
+.red-text{
+    color: #D63C23; 
+    font-size: 78 px;
+}
+
+.grey-text{
+    color: #6F96A3;
+    font-size: 30 px;
+    font: Agrandir Bold;
+}
+
+h1{
+    font-size: 45 px;
+    font-family: 'Agrandir Bold';
+}
+.center-container {
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+    height: 25vh;
+    padding-left: 20px; 
+
+}
+
+.circle-container {
+    display: flex;
+    justify-content: space-around;
+    padding-left: 20px; 
+    margin-top: 40px; 
+}
+
+.container {
+    display: flex;
+}

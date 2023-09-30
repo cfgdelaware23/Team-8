@@ -7,11 +7,10 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import CardMedia from '@mui/material/CardMedia';
 import './Profile.css';
-import axios from 'axios';
 
 
 const Profile = () => {
-    const [name, setName] = useState('tester');
+    const [name, setName] = useState('Bob');
     const [code, setCode] = useState('X32Z');
     const [savings, setSavings] = useState('45%');
     const [id, setId] = useState('001');
@@ -31,7 +30,7 @@ const Profile = () => {
     
     return (
         <div class="profile">
-            <img className="logo" src="https://static.wixstatic.com/media/be7cda_0740848baea54c8e8af2e1a6ad34b9ad~mv2.png/v1/fill/w_101,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20-%20Primary.png" alt="logo"/>
+            <a href="/"><img className="logo" src="https://static.wixstatic.com/media/be7cda_0740848baea54c8e8af2e1a6ad34b9ad~mv2.png/v1/fill/w_101,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20-%20Primary.png" alt="logo"/></a>
             <h2>Welcome, {name}!</h2>
             <p>ID: {id}</p>
 
@@ -111,7 +110,6 @@ const Profile = () => {
             <div className="footer">
                 <h4>Millions of Americans face barriers to accessing nutritious food everyday. We're on a mission to change that.</h4>
             </div>
-    
         </div>
     );
 };
