@@ -1,0 +1,70 @@
+.home {
+    background-color: #ffffff;
+}
+
+
+.log-in-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 300px; 
+    height: 300px;
+    border-radius: 50%; 
+    background-color: #e9bc8b; 
+    color: white; 
+    text-align: center; 
+    line-height: 10px; 
+    font-size: 36px; 
+    cursor: pointer;
+    padding: 10px;
+}
+.language-button {
+    background-color: #3498db;
+    color: white;
+    width: 70px; 
+    height: 70px;
+}
+.new-user-button {
+    align-items: center;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 300px; 
+    height: 300px;
+    border-radius: 50%; 
+    background-color: #e9bc8b; 
+    color: white; 
+    text-align: center; 
+    line-height: 10px; 
+    font-size: 36px; 
+    padding: 10px;
+    cursor: pointer;
+}
+
+.sign-up{
+    color: white;
+    background-color: rgb(215, 203, 203);
+}
+
+.red-text{
+    color: #D63C23; 
+    font-size: 78 px;
+}
+
+.grey-text{
+    color: #6F96A3;
+    font-size: 30 px;
+}
+
+h1{
+    font-size: 45 px;
+}
+.center-container {
+    display: flex;
+    justify-content: space-around;
+
+    align-items: center;
+    height: 25vh;
+    padding-left: 20px; 
+
+}
