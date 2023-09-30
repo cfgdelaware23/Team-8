@@ -20,7 +20,7 @@ CREATE TABLE Customer (
     AccessProgr BOOLEAN,
     City VARCHAR(70),
     StateAbbrev VARCHAR(10),
-    EmploymentStatus VARCHAR(30),
+    EmploymentStatus BOOLEAN,
     FOREIGN KEY (PersonID) REFERENCES Person(PersonID)
 );
 
