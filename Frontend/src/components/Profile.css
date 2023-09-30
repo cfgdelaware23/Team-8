@@ -1,0 +1,14 @@
+.logo {
+    width: 180px;
+    height: auto;
+  }
+
+.save {
+  color: green;
+}
+
+.profile {
+  text-align: center;
+  align-items: center;
+  font-family: Arial,Helvetica,sans-serif;
+}
