@@ -15,19 +15,20 @@ const Profile = () => {
     const [name, setName] = useState('tester');
     const [code, setCode] = useState('X32Z');
     const [savings, setSavings] = useState('45%');
-
-    // Connect database to above variables here ^
+    const [id, setId] = useState('001');
+    // Connect database to ab
     return (
         <div class="profile">
             <img className="logo" src="https://static.wixstatic.com/media/be7cda_0740848baea54c8e8af2e1a6ad34b9ad~mv2.png/v1/fill/w_101,h_24,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Logo%20-%20Primary.png" alt="logo"/>
             <h2>Welcome, {name}!</h2>
+            <p>ID: {id}</p>
     
             <Container sx={{ py: 8 }} maxWidth="md">
             <Grid container spacing={4}>
                 <Grid item xs={12} sm={6} md={4}>
                     <Card
                     sx={{ height: '100%', display: 'flex', flexDirection: 'column' }}
-                    >
+                    >   
                     <CardMedia
                         component="div"
                         sx={{
