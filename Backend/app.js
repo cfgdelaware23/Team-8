@@ -6,7 +6,14 @@ const app = express();
 const profile = {
    customerId: 1234,
    name: 'Jane Doe',
-   address: 'New York'        
+   income: 20000,
+   householdSize: 4,
+   age: 35,
+   employedStatus: false,
+   accessibilityPrograms: true, // temporary until we figure out format 
+   streetAddress: '250 Church Street',
+   city: 'New York',
+   state: 'New York'        
 };
           
 //Port
