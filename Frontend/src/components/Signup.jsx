@@ -51,7 +51,8 @@ export default function Signup() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(`Enter your full name: ${inputs.name}`)
+    console.log(`Enter your first name: ${inputs.first_name}`)
+    console.log(`Enter your last name: ${inputs.last_name}`)
     console.log(`Enter your cellphone number: ${inputs.number}`)
     console.log(`Are you enrolled in an assistance program? ${inputs.assistance}`)
     console.log(`Do you live in public housing? ${inputs.housing}`)
@@ -59,23 +60,42 @@ export default function Signup() {
   }
 
   return (
+    // first name last name
+    // phone number
+    // primary language - english, español, french
+    // Is anyone in the household enrolled in SNAP EBT (formerly "food stamps")?
+    // do u live in a housing development?
+    // Does anyone in the household visit a free food pantry and/or receive free food from other programs at least once a month?
+
     <form onSubmit={handleSubmit}>
       <br></br>
-      <br></br>      
+      <img src="https://codeforgood.net/wp-content/uploads/2023/09/Wellfare-Logo-1536x304.png" height="50px"/>
+      <h1>Member Profile</h1>
       <FormControl varaint="filled">
-        <InputLabel htmlFor="component-filled"> Name</InputLabel>
+        <InputLabel htmlFor="component-filled"> First Name</InputLabel>
         <FilledInput
           type="text"
           id="component-outlined"
           name="name"
-          defaultValue={inputs.name || ""}
+          defaultValue={inputs.first_name || ""}
+          onChange={handleChange}
+          required/>
+      </FormControl>
+      &nbsp;&nbsp;
+      <FormControl varaint="filled">
+        <InputLabel htmlFor="component-filled"> Last Name</InputLabel>
+        <FilledInput
+          type="text"
+          id="component-outlined"
+          name="name"
+          defaultValue={inputs.last_name || ""}
           onChange={handleChange}
           required/>
       </FormControl>
       <br></br>
       <br></br>
       <FormControl>
-        <InputLabel htmlFor="component-filled">Cellphone Number</InputLabel>
+        <InputLabel htmlFor="component-filled">Phone Number</InputLabel>
         <FilledInput
           type="tel"
           id="component-outlined"
@@ -102,7 +122,7 @@ export default function Signup() {
         <br></br>
         <br></br>
         <FormControl>
-          <FormLabel id="demo-radio-buttons-group-label">Do you live in public housing?</FormLabel>
+          <FormLabel id="demo-radio-buttons-group-label">Do you reside in a NYCHA public housing development?</FormLabel>
           <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             name="housing-buttons-group"
