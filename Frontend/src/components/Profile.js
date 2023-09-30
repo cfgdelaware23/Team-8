@@ -10,7 +10,7 @@ import './Profile.css';
 
 
 const Profile = () => {
-    const [name, setName] = useState('tester');
+    const [name, setName] = useState('Bob');
     const [code, setCode] = useState('X32Z');
     const [savings, setSavings] = useState('45%');
     const [id, setId] = useState('001');
