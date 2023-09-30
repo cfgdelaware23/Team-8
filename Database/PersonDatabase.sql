@@ -1,9 +1,13 @@
+DROP TABLE IF EXISTS Employee, Customer, Person;
+
 CREATE TABLE Person (
     PersonID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50)
 );
-
+-- Then, create the "Employee" table and insert data into it
 CREATE TABLE Employee (
-    EmployeeID INT PRIMARY KEY,
+    PersonID INT PRIMARY KEY,
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     Salary DECIMAL(10, 2),
@@ -11,7 +15,7 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE Customer (
-    CustomerID INT PRIMARY KEY,
+	PersonID INT PRIMARY KEY, 
     FirstName VARCHAR(50),
     LastName VARCHAR(50),
     HouseIncome DECIMAL,
@@ -25,25 +29,32 @@ CREATE TABLE Customer (
     FOREIGN KEY (PersonID) REFERENCES Person(PersonID)
 );
 
--- PERSONS
 INSERT INTO Person (PersonID, FirstName, LastName)
 VALUES
-    (1),
-    (2),
-    (3),
-    (4);
+    (1, 'Jane', 'Smith'),
+    (2, 'Ben', 'Brown'),
+    (3, 'Jennifer', 'Doe'),
+	(4, 'Annie', 'Davis'),
+	(5, 'Matt', 'Garcia'),
+	(6, 'Anna', 'Smith'),
+	(7, 'Jane', 'Doe'),
+	(8, 'Jennie', 'Lee'),
+	(9, 'David', 'Anderson'),
+	(10, 'Robert', 'Brown');
 
--- EMPLOYEES
+
 INSERT INTO Employee(PersonID, FirstName, LastName, Salary)
 VALUES
-    (5, 5, 50000.00),
-    (6, 6, 30500.00),
-    (7, 7, 42456.00),
-    (8, 8, 49210.00),
-    (9, 9, 20135.00);
+    (1, 'Jane', 'Smith', 50000.00),
+    (2, 'Ben', 'Brown', 30500.00),
+    (3, 'Jennifer', 'Doe', 42456.00),
+    (4, 'Annie', 'Davis', 49210.00),
+    (5, 'Matt', 'Garcia', 20135.00);
 
 INSERT INTO Customer (
-    CustomerID,
+    PersonID,
+    FirstName,
+    LastName,
     HouseIncome,
     HouseholdSize,
     AccessProgr,
@@ -54,10 +65,11 @@ INSERT INTO Customer (
     FoodInsecurity
 )
 VALUES
-    (1, "Name", "LastName", 45394.50, 3, true, "Bronx", "NY", true, false, true),
-    (2, "", "", 45394.50, 3, true, "Fordham", "NY", true, false, true),
-    (3, "", "", 45394.50, 3, true, "Harlem", "NY", true, false, true),
-    (4, "", "", 45394.50, 3, true, "New York", "NY", true, false, true),
-    (5, "", "", 45394.50, 3, true, "Manhattan", "NY", true, false, true);
+    (6, 'Anna', 'Smith', 45394.50, 3, true, 'Bronx', 'NY', false, false, true),
+    (7, 'Jane', 'Doe', 45394.50, 3, true, 'Fordham', 'NY', true, true, false),
+    (8, 'Jennie', 'Lee', 45394.50, 3, true, 'Harlem', 'NY', true, false, false),
+    (9, 'David', 'Anderson', 45394.50, 3, true, 'New York', 'NY', false, true, true),
+    (10, 'Robert', 'Brown', 45394.50, 3, true, 'Manhattan', 'NY', true, true, false);
     
-    
+SELECT * FROM Customer;
+SELECT * FROM Employee;
