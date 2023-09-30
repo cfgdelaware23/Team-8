@@ -1,44 +1,41 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const { Pool } = require('pg');
+
 const app = express();
+const port = process.env.PORT || 5432;
 
+app.use(bodyParser.json());
 
-//SQL database
-const profile = {
-   customerId: 1234,
-   name: 'Jane Doe',
-   address: 'New York'        
+const dbConfig = {
+  user: 'petrovikj',
+  password: 'dp788',
+  host: '127.0.0.1',
+  port: 5432,
+  database: 'petrovikj',
 };
-          
-//Port
-const PORT = process.env.PORT || 4001;
 
+const pool = new Pool(dbConfig);
 
-app.get('/', function (req, res) {
-   // Config your database credential
-   const config = {
-       userId: 'SA',
-       password: 'Your_Password',
-       server: 'localhost',
-       database: 'geek'
-   };
-   // Connect to your database
-   mssql.connect(config, function (err) {
-       // Create Request object to perform
-       // query operation
-       let request = new mssql.Request();
-       // Query to the database and get the records
-       request.query('select * from student',
-           function (err, records) {
-               if (err) console.log(err)
-               // Send records as a response
-               // to browser
-               res.send(records);
-           });
-   });
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
 
+app.post('/api/submitFormData', async (req, res) => {
+  const { name, number, assistance, housing, insecurity } = req.body;
 
-//Listening
-app.listen(PORT, () => {
-   console.log(`Server is listening on ${PORT}`);
- });
+  try {
+    const client = await pool.connect();
+    const query = `
+      INSERT INTO users (name, number, assistance, housing, insecurity)
+      VALUES ($1, $2, $3, $4, $5)
+    `;
+    const values = [name, number, assistance, housing, insecurity];
+    await client.query(query, values);
+    client.release();
+    res.status(200).json({ message: 'Data inserted successfully.' });
+  } catch (err) {
+    console.error('Error:', err);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
