@@ -9,7 +9,7 @@ const Homepage = () => {
             </div>
                 <div class="circle-container">
                     <button class= "log-in-button">Login</button>
-                    <button class="new-user-button">New user!</button>
+                    <button class="new-user-button">Sign Up</button>
                 </div>
                 <h1><span class="red-text">Wel</span><span class ="grey-text">come</span></h1>
                <div className= "center-container">
