@@ -3,7 +3,7 @@
 <h1 align="center">Hi there 👋, we are Group 8</h1>
 <h3 align="center">All of us are prospective SWE's </h3>                            
                                            
-Group Members: Jalen stephens, Ryan Sanchez, Michaela Gary, Jan suarez, Eshita Maheshwari, Asia Gray
+Group Members: Jalen stephens, Ryan Sanchez, Michaela Gary, Jan suarez, Eshita Maheshwari, Asia Gray, Davor Petrovikj
 
 Mentors: Ashwini 
 
